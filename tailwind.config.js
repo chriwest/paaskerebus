@@ -9,6 +9,13 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+        easter: '#F2DA54',
+        easterBlue: '#546CF2',
+        easterRed: '#F2546C',
+        easterCyan: '#54F2DA',
+        easterGreen: '#82F254',
+        easterTint: '#F7E998',
+        easterShade: '#302C11',
       },
       spacing: {
         28: '7rem',

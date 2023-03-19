@@ -11,7 +11,7 @@ const Alert = ({ preview }: Props) => {
     <div
       className={cn('border-b', {
         'bg-neutral-800 border-neutral-800 text-white': preview,
-        'bg-neutral-50 border-neutral-200': !preview,
+        'bg-easterRed border-neutral-200': !preview,
       })}
     >
       <Container>
@@ -29,12 +29,12 @@ const Alert = ({ preview }: Props) => {
             </>
           ) : (
             <>
-              The source code for this blog is{' '}
+              Farevarsel! Mye vind på på fjelloverganger, spesielt utsatt for bris ved Hurumhei. {' '}
               <a
                 href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
                 className="underline hover:text-blue-600 duration-200 transition-colors"
               >
-                available on GitHub
+                Se bildene her
               </a>
               .
             </>

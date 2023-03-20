@@ -1,13 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* .stream_text {
+.stream_text {
     position: absolute;
     padding-left: 100%;
     white-space: nowrap;
     font-size: 30px;
     text-transform: uppercase;
-    animation: stream 15s linear infinite;
+    animation: stream 5s linear infinite;
   }
 
   @keyframes stream {
@@ -17,4 +14,4 @@
     100% {
       transform: translateX(-100%);
     }
-  } */
+  }

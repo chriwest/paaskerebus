@@ -1,4 +1,6 @@
+// InputField.tsx
 import React, { useState } from 'react';
+import styles from '../styles/input.module.css';
 
 interface InputFieldProps {
   correctValue: string;
@@ -9,22 +11,24 @@ const InputField: React.FC<InputFieldProps> = ({ correctValue, onValidation }) =
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setInputValue(value);
+    setInputValue(event.target.value);
+  };
 
-    if (value === correctValue) {
-      onValidation(true);
-    } else {
-      onValidation(false);
-    }
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    onValidation(inputValue === correctValue);
   };
 
   return (
-    <input
-      type="text"
-      value={inputValue}
-      onChange={handleChange}
-    />
+    <form className={styles.container} onSubmit={handleSubmit}>
+      <input
+      className={styles.inputs}
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+      />
+      <button className={styles.submit} type="submit">Submit</button>
+    </form>
   );
 };
 

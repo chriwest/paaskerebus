@@ -14,12 +14,21 @@ type Props = {
 
 export default function SubTerra({ allPosts }: Props) {
   const [validationMessage, setValidationMessage] = useState("");
+  const [validationMessage2, setValidationMessage2] = useState("");
 
   const handleValidation = (isValid) => {
     if (isValid) {
       setValidationMessage("Svaret er kult");
     } else {
       setValidationMessage("Svaret er feil 😬");
+    }
+  };
+
+  const handleValidation2 = (isValid) => {
+    if (isValid) {
+      setValidationMessage2("Svaret er mega");
+    } else {
+      setValidationMessage2("Svaret er feil 😬");
     }
   };
   return (
@@ -33,6 +42,8 @@ export default function SubTerra({ allPosts }: Props) {
 
           <InputField correctValue="correct" onValidation={handleValidation} />
           <p>{validationMessage}</p>
+          <InputField correctValue="peace" onValidation={handleValidation2} />
+          <p>{validationMessage2}</p>
         </Container>
       </Layout>
     </>

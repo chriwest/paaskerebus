@@ -76,7 +76,7 @@ export default function SubTerra({ allPosts }: Props) {
           <InputField
             label="Svar for spørsmål 2:"
             id="spm2"
-            correctValue={["peace", "harmony", "tranquility"]}
+            correctValue={["midjourney"]}
             onValidation={handleValidation2}
           />
           <p

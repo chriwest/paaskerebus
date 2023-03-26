@@ -1,6 +1,6 @@
 ---
 title: 'Vofs bofs'
-excerpt: 'Doggo ipsum pupperino long bois adorable doggo shooberino, borkdrive. Ruff wow such tempt bork, long bois. Long water shoob fat boi smol borking doggo with a long snoot for pats, length boy. Puggorino maximum borkdrive heckin lotsa pats porgo heck, long woofer stop it fren ruff.'
+excerpt: 'Vofs bofs er et av årets nye bidrag til Påskerebusen. Han debuterer med en fiffig gåre 🐶'
 coverImage: '/assets/blog/dynamic-routing/vofs.jpg'
 date: '2023-03-20T05:35:07.322Z'
 author:

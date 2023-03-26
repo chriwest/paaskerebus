@@ -14,40 +14,32 @@ type Props = {
 };
 
 export default function SubTerra({ allPosts }: Props) {
-  const [validationMessage, setValidationMessage] = useState("");
-  const [validationMessage2, setValidationMessage2] = useState("");
-  const [validationMessage3, setValidationMessage3] = useState("");
-  const [validationMessage4, setValidationMessage4] = useState("");
+  const [correctAnswers, setCorrectAnswers] = useState<Record<number, boolean>>(
+    {}
+  );
+  const [validationMessages, setValidationMessages] = useState<
+    Record<number, string>
+  >({});
 
-  const handleValidation = (isValid) => {
-    if (isValid) {
-      setValidationMessage("Svaret er riktig 😀🎉");
-    } else {
-      setValidationMessage("Svaret er feil 😬");
-    }
+  const handleValidation = (id: number, isValid: boolean) => {
+    setCorrectAnswers((prevState) => ({ ...prevState, [id]: isValid }));
+    setValidationMessages((prevState) => ({
+      ...prevState,
+      [id]: isValid ? "Svaret er riktig 😀🎉" : "Svaret er feil 😬",
+      [id]: isValid ? "Svaret er riktig 😀🎉" : "Svaret er feil 😬",
+      [id]: isValid ? "Svaret er riktig 😀🎉" : "Svaret er feil 😬",
+      [id]: isValid ? "Svaret er riktig 👏😮🔥🎉" : "Svaret er feil 😬",
+    }));
   };
 
-  const handleValidation2 = (isValid) => {
-    if (isValid) {
-      setValidationMessage2("Svaret er riktig 😀🎉");
-    } else {
-      setValidationMessage2("Svaret er feil 😬");
-    }
+  const allAnswersCorrect = () => {
+    const numberOfInputFields = 4;
+    return (
+      Object.keys(correctAnswers).length === numberOfInputFields &&
+      Object.values(correctAnswers).every((answer) => answer === true)
+    );
   };
-  const handleValidation3 = (isValid) => {
-    if (isValid) {
-      setValidationMessage3("Svaret er riktig 😀🎉");
-    } else {
-      setValidationMessage3("Svaret er feil 😬");
-    }
-  };
-  const handleValidation4 = (isValid) => {
-    if (isValid) {
-      setValidationMessage4("Svaret er riktig 👏😮🔥🎉");
-    } else {
-      setValidationMessage4("Svaret er feil 😬");
-    }
-  };
+
   return (
     <>
       <Layout>
@@ -59,53 +51,74 @@ export default function SubTerra({ allPosts }: Props) {
           <h2
             className={`text-4xl md:text-4xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
           >
-            Ooooh, det ser ut som du har ramlet inn til svarsiden. Men har du
+            Ooooh, det ser ut som du har ramlet inn til svarsiden 😀 Men har du
             svar på alle oppgavene da? 🤔 🎉🐥
           </h2>
           <InputField
             label="Svar for spørsmål 1:"
             id="spm1"
-            correctValue={["peace", "harmony", "tranquility"]} // Pass an array of correct answers
-            onValidation={handleValidation}
+            correctValue={["peace", "harmony", "tranquility"]}
+            onValidation={(isValid) => handleValidation(1, isValid)}
           />
           <p
             className={`text-2xl md:text-2xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
           >
-            {validationMessage}
+            {validationMessages[1]}
           </p>
           <InputField
             label="Svar for spørsmål 2:"
             id="spm2"
             correctValue={["midjourney"]}
-            onValidation={handleValidation2}
+            onValidation={(isValid) => handleValidation(2, isValid)}
           />
           <p
             className={`text-2xl md:text-2xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
           >
-            {validationMessage2}
+            {validationMessages[2]}
           </p>
           <InputField
             label="Svar for spørsmål 3:"
             id="spm3"
-            correctValue={["bak timeglasset finner du neste hint", "timeglasset", "voss", "timeglass"]}
-            onValidation={handleValidation3}
+            correctValue={[
+              "bak timeglasset finner du neste hint",
+              "timeglasset",
+              "voss",
+              "timeglass",
+            ]}
+            onValidation={(isValid) => handleValidation(3, isValid)}
           />
           <p
             className={`text-2xl md:text-2xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
           >
-            {validationMessage3}
+            {validationMessages[3]}
           </p>
           <InputField
             label="Svar for spørsmål 4:"
             id="spm4"
-            correctValue={["darvaza", "darvaza eternal fire", "krateret i derveze", "door to hell", "gates of hell", "darvaza gas crater"]}
-            onValidation={handleValidation4}
+            correctValue={[
+              "darvaza",
+              "darvaza eternal fire",
+              "krateret i derveze",
+              "door to hell",
+              "gates of hell",
+              "darvaza gas crater",
+            ]}
+            onValidation={(isValid) => handleValidation(4, isValid)}
           />
           <p
             className={`text-2xl md:text-2xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
           >
-            {validationMessage4}
+            {validationMessages[4]}
           </p>
+          {allAnswersCorrect() && (
+            <p
+              className={`text-3xl md:text-3xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
+            >
+              Whaaahahaha, du klarte alle 😍👏👏🐥 Det var enormt godt jobbet!!!
+              Svaret på spørsmål 3 vil lede deg til hands-on premier 😊 Men for
+              nå, så kan du nyte følelsen av å være over snittet smart 🤓🐣🔥🤩🥳
+            </p>
+          )}
         </Container>
       </Layout>
     </>

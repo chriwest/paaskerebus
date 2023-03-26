@@ -9,7 +9,7 @@ author:
 ogImage:
   url: '/assets/blog/preview/poene.jpg'
 ---
-## The loser's standing small, The winner takes it all (de første er de eneste som blir husket)
+## The loser's standing small, The winner takes it all. De første er de eneste som blir husket (og de eneste vi bryr oss om)
 
 Jeg har lenge tenkt på å skrive et dikt. Eller dikt blir feil, jeg ønsket et Haiku, men ordene ble for mange og formatet for knapt. Derfor har jeg kommunisert på en måte som gjør at jeg kan si enda mer enn det jeg viser til.
 

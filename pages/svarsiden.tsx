@@ -87,7 +87,7 @@ export default function SubTerra({ allPosts }: Props) {
           <InputField
             label="Svar for spørsmål 3:"
             id="spm3"
-            correctValue={["bak timeglasset finner du neste hint", "timeglasset", "voss"]}
+            correctValue={["bak timeglasset finner du neste hint", "timeglasset", "voss", "timeglass"]}
             onValidation={handleValidation3}
           />
           <p

@@ -8,7 +8,6 @@ author:
   picture: '/assets/blog/authors/tiger.jpeg'
 ogImage:
   url: '/assets/blog/darvaza/darvaza.jpeg'
-  inputFieldId: 'inputField1'
 ---
 "In a land far, far away, there was a wise old astronomer who spent his days studying the heavens. One day, while observing the night sky, he discovered a secret location on Earth that held an extraordinary secret.
 

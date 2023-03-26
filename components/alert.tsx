@@ -33,7 +33,7 @@ const Alert = ({ preview }: Props) => {
               bris ved Hurumhei.{" "}
               <a
                 target="_blank"
-                href={`https://dms-cf-03.dimu.org/image/0334ARxpKJPy?dimension=1200x1200`}
+                href={'/assets/blog/preview/juster.jpeg'}
                 className="underline hover:text-blue-600 duration-200 transition-colors"
               >
                 Se bildene her

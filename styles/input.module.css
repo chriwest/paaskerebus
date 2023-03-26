@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    margin-bottom: 24px;
   }
   
   .inputs {

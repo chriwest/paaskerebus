@@ -2,6 +2,7 @@ import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import PostTitle from './post-title'
+import SubHeader from '../components/post-sub-header'
 import type Author from '../interfaces/author'
 
 type Props = {
@@ -9,9 +10,10 @@ type Props = {
   coverImage: string
   date: string
   author: Author
+  quizHeader: string
 }
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, coverImage, date, author, quizHeader }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -27,6 +29,9 @@ const PostHeader = ({ title, coverImage, date, author }: Props) => {
         </div>
         <div className="mb-6 text-lg">
           <DateFormatter dateString={date} />
+        </div>
+        <div className="mb-6 text-lg">
+          <SubHeader quizHeader={quizHeader} />
         </div>
       </div>
     </>

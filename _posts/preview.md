@@ -2,7 +2,8 @@
 title: 'Jeg kom, jeg så, jeg vant.'
 excerpt: 'Store oppgaver skal en ta fatt på - ikke overveie.'
 coverImage: '/assets/blog/preview/poene.jpg'
-date: '2023-03-16T05:35:07.322Z'
+date: '2021-03-16T05:35:07.322Z'
+quizHeader: 'Oppgave 3'
 author:
   name: Hønulf
   picture: '/assets/blog/authors/poene.jpeg'

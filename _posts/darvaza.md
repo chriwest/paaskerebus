@@ -3,6 +3,7 @@ title: 'The Astronomer'
 excerpt: 'Behold a fiery spectacle'
 coverImage: '/assets/blog/darvaza/darvaza.jpeg'
 date: '1971-03-20T05:35:07.322Z'
+quizHeader: 'Oppgave 4'
 author:
   name: Tiger Turk
   picture: '/assets/blog/authors/tiger.jpeg'

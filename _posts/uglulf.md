@@ -3,6 +3,7 @@ title: 'Uglulf den vise'
 excerpt: 'Den kloke gamle uglen sa en gang at ingenting er som det ser ut til.'
 coverImage: '/assets/blog/preview/ugle.png'
 date: '2022-07-12T05:35:07.322Z'
+quizHeader: 'Oppgave 2'
 author:
   name: Uglulf
   picture: '/assets/blog/authors/ugle.png'

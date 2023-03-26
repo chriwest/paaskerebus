@@ -55,7 +55,7 @@ export default function SubTerra({ allPosts }: Props) {
             svar på alle oppgavene da? 🤔 🎉🐥
           </h2>
           <InputField
-            label="Svar for spørsmål 1:"
+            label="Svar for oppgave 1:"
             id="spm1"
             correctValue={["peace", "harmony", "tranquility"]}
             onValidation={(isValid) => handleValidation(1, isValid)}
@@ -66,7 +66,7 @@ export default function SubTerra({ allPosts }: Props) {
             {validationMessages[1]}
           </p>
           <InputField
-            label="Svar for spørsmål 2:"
+            label="Svar for oppgave 2:"
             id="spm2"
             correctValue={["midjourney"]}
             onValidation={(isValid) => handleValidation(2, isValid)}
@@ -77,7 +77,7 @@ export default function SubTerra({ allPosts }: Props) {
             {validationMessages[2]}
           </p>
           <InputField
-            label="Svar for spørsmål 3:"
+            label="Svar for oppgave 3:"
             id="spm3"
             correctValue={[
               "bak timeglasset finner du neste hint",
@@ -93,7 +93,7 @@ export default function SubTerra({ allPosts }: Props) {
             {validationMessages[3]}
           </p>
           <InputField
-            label="Svar for spørsmål 4:"
+            label="Svar for oppgave 4:"
             id="spm4"
             correctValue={[
               "darvaza",

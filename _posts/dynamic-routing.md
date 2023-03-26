@@ -3,6 +3,7 @@ title: 'Vofs bofs'
 excerpt: 'Vofs bofs er et av årets nye bidrag til Påskerebusen. Han debuterer med en fiffig gåre 🐶'
 coverImage: '/assets/blog/dynamic-routing/vofs.jpg'
 date: '2023-03-20T05:35:07.322Z'
+quizHeader: 'Oppgave 1'
 author:
   name: Tiger
   picture: '/assets/blog/authors/tiger.jpeg'

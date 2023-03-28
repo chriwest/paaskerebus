@@ -13,7 +13,7 @@ ogImage:
 
 ## "Bofs Voff voff" 🐶
 
-Vofs-Bofs prater ikke så godt norsk, men han kommuniserer eksemplarisk med folk fra både denne og den andre siden. Han har ganske interessante venner som han har fått med seg til å formidle en liten opgpave. 
+Vofs-Bofs prater ikke så godt norsk, men han kommuniserer eksemplarisk med folk fra både denne og den andre siden. Han har ganske interessante venner som han har fått med seg til å formidle en liten oppgave. 
 
 ## Hør fra vennene hans her
 

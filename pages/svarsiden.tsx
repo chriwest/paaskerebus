@@ -2,13 +2,13 @@ import Container from "../components/container";
 import InputField from "../components/input-field";
 import Layout from "../components/layout";
 import Header from "../components/header";
-// import Confetti from "react-confetti";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Post from "../interfaces/post";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import styles from "../styles/input.module.css";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
+import { Dialog, Transition } from "@headlessui/react";
 
 type Props = {
   allPosts: Post[];
@@ -21,10 +21,21 @@ export default function SubTerra({ allPosts }: Props) {
   const [validationMessages, setValidationMessages] = useState<
     Record<number, string>
   >({});
-  const Confetti = dynamic(() => import('react-confetti'), {
+  const Confetti = dynamic(() => import("react-confetti"), {
     ssr: false,
-  })
+  });
 
+  const [isShowing, setIsShowing] = useState(false);
+
+  let [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  // function openModal() {
+  //   setIsOpen(true);
+  // }
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleValidation = (
@@ -40,21 +51,22 @@ export default function SubTerra({ allPosts }: Props) {
     }));
   };
 
-
-  const allAnswersCorrect = () => {
-    const numberOfInputFields = 4;
-    return (
-      Object.keys(correctAnswers).length === numberOfInputFields &&
-      Object.values(correctAnswers).every((answer) => answer === true)
-    );
-  };
-
   useEffect(() => {
     if (allAnswersCorrect()) {
+      setIsOpen(true);
       setShowConfetti(true);
     }
   }, [correctAnswers]);
-  
+
+  const allAnswersCorrect = () => {
+    const numberOfInputFields = 4;
+    const areAllCorrect =
+      Object.keys(correctAnswers).length === numberOfInputFields &&
+      Object.values(correctAnswers).every((answer) => answer === true);
+
+    return areAllCorrect;
+  };
+
   return (
     <>
       <Layout>
@@ -69,6 +81,81 @@ export default function SubTerra({ allPosts }: Props) {
             Ooooh, det ser ut som du har ramlet inn til svarsiden 😀 Men har du
             svar på alle oppgavene da? 🤔 🎉🐥
           </h2>
+          {allAnswersCorrect() && (
+            <Transition appear show={isOpen} as={Fragment}>
+              <Dialog
+                as="div"
+                className="fixed inset-0 z-10 overflow-y-auto"
+                onClose={closeModal}
+              >
+                <div className="min-h-screen px-4 text-center">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                  >
+                    <Dialog.Overlay className="fixed inset-0" />
+                  </Transition.Child>
+
+                  {/* This element is to trick the browser into centering the modal contents. */}
+                  <span
+                    className="inline-block h-screen align-middle"
+                    aria-hidden="true"
+                  >
+                    &#8203;
+                  </span>
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-3xl md:text-3xl font-bold leading-6 text-gray-500"
+                      >
+                        Gratulerer 😀
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <p className="text-sm text-gray-500 border-t pt-2">
+                          {allAnswersCorrect() && (
+                            <p
+                              className={`text-3xl md:text-3xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
+                            >
+                              Whaaahahaha, du klarte alle 😍👏👏🐥 Det var
+                              enormt godt jobbet!!! Svaret på spørsmål 3 vil
+                              lede deg til hands-on premier 😊 Men for nå, så
+                              kan du nyte følelsen av å være over snittet smart
+                              🤓🐣🔥🤩🥳
+                            </p>
+                          )}
+                        </p>
+                      </div>
+
+                      <div className="mt-4">
+                        <button
+                          type="button"
+                          className="inline-flex justify-center px-4 py-2 text-sm text-red-900 bg-red-100 border border-transparent rounded-md hover:bg-red-200 duration-300"
+                          onClick={closeModal}
+                        >
+                          Lukk
+                        </button>
+                      </div>
+                    </div>
+                  </Transition.Child>
+                </div>
+              </Dialog>
+            </Transition>
+          )}
+
           <InputField
             label="Svar for oppgave 1:"
             id="spm1"
@@ -153,16 +240,6 @@ export default function SubTerra({ allPosts }: Props) {
           >
             {validationMessages[4]}
           </p>
-          {allAnswersCorrect() && (
-            <p
-              className={`text-3xl md:text-3xl font-bold tracking-tighter leading-tight md:pr-8 ${styles.container}`}
-            >
-              Whaaahahaha, du klarte alle 😍👏👏🐥 Det var enormt godt jobbet!!!
-              Svaret på spørsmål 3 vil lede deg til hands-on premier 😊 Men for
-              nå, så kan du nyte følelsen av å være over snittet smart
-              🤓🐣🔥🤩🥳
-            </p>
-          )}
         </Container>
       </Layout>
       {showConfetti && (

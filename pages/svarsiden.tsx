@@ -25,17 +25,12 @@ export default function SubTerra({ allPosts }: Props) {
     ssr: false,
   });
 
-  const [isShowing, setIsShowing] = useState(false);
-
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  // function openModal() {
-  //   setIsOpen(true);
-  // }
   const [showConfetti, setShowConfetti] = useState(false);
 
   const handleValidation = (

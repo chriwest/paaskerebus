@@ -75,7 +75,7 @@ export default function Hint({ allPosts }: Props) {
           </button>
           <br />
 
-          <Transition show={isShowing3} as="c" className="font-bold">
+          <Transition show={isShowing3} as="p" className="font-bold">
             Jeg anerkjenner at denne kan være vrien. Foruten bandet, så er det
             mange sitater her, men det er en som står for flere enn andre.
             Vedkommende har også et "verktøy" oppkalt etter seg som du trenger
@@ -91,7 +91,7 @@ export default function Hint({ allPosts }: Props) {
           </button>
           <br />
 
-          <Transition show={isShowing4} as="d" className="font-bold">
+          <Transition show={isShowing4} as="g" className="font-bold">
             Vi skal frem til et sted, og du har alt du trenger for å komme frem
             i teksten, noen tall er tydeligere enn andre, men det må nok søkes
             opp, for det er ikke et format jeg tar i hodet...🌎

@@ -72,6 +72,9 @@ export default function Modal() {
                     så givende 😄 Jeg forventer mer av deg 🤓 Om du likevel er
                     nysgjerrig, så sjekk ut repoet 👻
                   </p>
+                  <p className="text-sm text-gray-500 border-t pt-2">
+                   Men ok, hvis det blir for ille, og du ikke kommer noen vei, så kan du også ty til ekstra hint om oppgavene...
+                  </p>
                 </div>
 
                 <div className="mt-4">
@@ -88,6 +91,13 @@ export default function Modal() {
                     className="ml-2 px-4 py-2 text-sm text-white bg-green-500 border border-transparent rounded-md hover:bg-opacity-50 duration-300 shadow-xl"
                   >
                     Til GitHub{" "}
+                  </a>
+                  <a
+                    target="_blank"
+                    href="/hintside/"
+                    className="ml-2 px-4 py-2 text-sm text-white bg-green-500 border border-transparent rounded-md hover:bg-opacity-50 duration-300 shadow-xl"
+                  >
+                    Til Hint{" "}
                   </a>
                 </div>
               </div>

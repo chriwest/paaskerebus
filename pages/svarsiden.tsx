@@ -154,7 +154,7 @@ export default function SubTerra({ allPosts }: Props) {
           <InputField
             label="Svar for oppgave 1:"
             id="spm1"
-            correctValue={["lillehammer", "ol på lillehammer", "ol 94"]}
+            correctValue={["lillehammer", "ol på lillehammer", "ol 94", "lillehammer ol"]}
             onValidation={(isValid) =>
               handleValidation(
                 1,
